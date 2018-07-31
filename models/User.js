@@ -7,4 +7,4 @@ var userSchema = new mongoose.Schema({
     createdTimeStamp: {type: String, default: () => moment().format("dddd, MMMM Do YYYY, h:mm:ss a")} 
 });
 
-module.exports = mongoose.model('userSchema', userSchema);
+module.exports = mongoose.model('user', userSchema);

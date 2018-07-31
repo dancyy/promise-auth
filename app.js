@@ -6,13 +6,14 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 
 mongoose
-  .connect('mongodb://localhost:27017/users', { useNewUrlParser: true })
+  .connect('mongodb://localhost:27017/store', { useNewUrlParser: true })
   .then(() => console.log('MONGODB CONNECTED'))
   .catch((err) => console.log(err));
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var productsRouter = require('./routes/products');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/products', productsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

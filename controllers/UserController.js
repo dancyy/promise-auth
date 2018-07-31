@@ -4,14 +4,10 @@ module.exports = {
     getAllUsers: (params) => {
         return new Promise((resolve, reject) => {
 
-            User.find(params, (err, users) => {
-                if(err) {
-                    reject(err);
-                } else {
-                    resolve(users);
-                }
-            });
-
+            User.find(params)
+                .then(users => resolve(users))
+                .catch(error => reject(error));
+                
         });
     }
-}
+};
