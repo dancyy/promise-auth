@@ -1,11 +1,13 @@
-<div class="card" style="width: 18rem;display: flex; flex-direction: row;">
+<div style="display: flex; flex-direction: column; flex-wrap: wrap;"></div>
+<div class="card" style="width: 18rem;">
     <% products.forEach((product) => { %>
     <img class="card-img-top" src=".../100px180/" alt="Card image cap">
     <div class="card-body">
         <h5 class="card-title"><%= product.productName %></h5>
         <p class="card-text"><%= product.description %></p>
         <span>$<%= product.price %></span>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <br>
+        <a href="#" class="btn btn-primary">Buy now</a>
     </div>
     <% }) %>
 </div>

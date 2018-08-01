@@ -21,6 +21,11 @@ router.get('/', function(req, res, next) {
         });
 });
 
+router.get('/createproduct', function(req, res, next) {
+    res.render('createproduct');
+});
+
+
 router.post('/createproduct', function(req, res, next) {
     ProductController.createProduct(req.body)
         .then(product => {
