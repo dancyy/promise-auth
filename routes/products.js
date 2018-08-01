@@ -32,6 +32,21 @@ router.get('/', function(req, res, next) {
         });
 });
 
+router.get('/:id', function(req, res, next) {
+    ProductController.getProductById(req.params.id)
+        .then(product => {
+            res.render('product-page', { product })
+            return;
+        })
+        .catch(err => {
+            res.json({
+                message: 'Error getting product',
+                err
+            });
+            return;
+        });
+});
+
 router.get('/createproduct', function(req, res, next) {
     res.render('createproduct');
 });

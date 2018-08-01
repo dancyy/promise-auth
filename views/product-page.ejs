@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <title>Product Page</title>
+    <% include partials/head %>
+  </head>
+
+  <body>
+
+    <% include partials/navbar %>
+    
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/<%= product.productPicture %>" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text"><%= product.description %></p>
+        </div>
+    </div>
+    <h5 class="card-title">Name: <%= product.productName %></h5>
+    <p class="card-text">Description: <%= product.description %></p>
+    <p class="card-text">Price: $<%= product.price %></p>
+    
+    <button type="submit" class="btn btn-dark">Add to cart</button>
+
+    <% include partials/scripts %>
+
+  </body>
+</html>

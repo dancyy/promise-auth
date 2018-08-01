@@ -11,6 +11,14 @@ module.exports = {
         });
     },
 
+    getProductById: (id) => {
+        return new Promise((resolve, reject) => {
+            Product.findById(id)
+                .then(product => resolve(product))
+                .catch(err => reject(err))
+        });
+    },
+
     createProduct: (params) => {
         return new Promise((resolve, reject) => {
             
