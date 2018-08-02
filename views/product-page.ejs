@@ -8,16 +8,16 @@
   <body>
 
     <% include partials/navbar %>
-    
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/images/<%= product.productPicture %>" alt="Card image cap">
-        <div class="card-body">
-            <p class="card-text"><%= product.description %></p>
-        </div>
+    <h3 class="card-title"><%= product.productName %></h3>
+    <div class="card" style="max-width: 40vw; display: flex; align-content: center;"  >
+      <img class="card-img-top" src="/images/<%= product.productPicture %>" alt="Card image cap">
     </div>
-    <h5 class="card-title">Name: <%= product.productName %></h5>
-    <p class="card-text">Description: <%= product.description %></p>
-    <p class="card-text">Price: $<%= product.price %></p>
+    <div >
+      
+      <p class="card-text">Description: <%= product.description %></p>
+      <p class="card-text">Price: $<%= product.price %></p>
+      
+    </div>
     
     <button type="submit" class="btn btn-dark">Add to cart</button>
 

@@ -32,6 +32,10 @@ router.get('/', function(req, res, next) {
         });
 });
 
+router.get('/createproduct', function(req, res, next) {
+    res.render('createproduct');
+});
+
 router.get('/:id', function(req, res, next) {
     ProductController.getProductById(req.params.id)
         .then(product => {
@@ -47,9 +51,6 @@ router.get('/:id', function(req, res, next) {
         });
 });
 
-router.get('/createproduct', function(req, res, next) {
-    res.render('createproduct');
-});
 
 var upload = multer({storage: storage});
 

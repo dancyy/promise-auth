@@ -1,7 +1,9 @@
 <div class="card-deck">
     <% products.forEach((product) => { %>
-    <div class="card">
-        <img class="card-img-top" src="/images/<%= product.productPicture %>" alt="Card image cap">
+    <div class="card" style="max-width: 30vw;">
+        <a href="/products/<%= product.id %>">
+            <img class="card-img-top" src="/images/<%= product.productPicture %>" alt="Card image cap">
+        </a>
         <div class="card-body">
             <h5 class="card-title"><%= product.productName %></h5>
             <p class="card-text"><%= product.description %></p>
