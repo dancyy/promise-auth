@@ -10,6 +10,7 @@ var session = require('express-session');
 var sessionStore = new session.MemoryStore;
 var expressValidator = require('express-validator');
 var flash = require('connect-flash');
+var User = require('./models/User');
 
 mongoose
   .connect('mongodb://localhost:27017/store', { useNewUrlParser: true })
@@ -42,6 +43,11 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+// passport.use(new LocalStrategy(User.authenticate()));
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
+require('./middleware/passport')(passport, LocalStrategy, User);
 
 app.use(logger('dev'));
 app.use(express.json());
